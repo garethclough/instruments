@@ -3,10 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 t, signal = functions.simulate_sine_wave(
-    frequency=10,
+    frequency=20,
     amplitude=5,
-    modulation_frequency=0.5,
-    duration=5
+    variation=0.2,
+    duration=1,
+    sample_rate= 100
 )
 
 plt.plot(t, signal)
