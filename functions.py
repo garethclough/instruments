@@ -139,6 +139,11 @@ def choose_decimation(freq, periods=10):
     return 16384
 
 
+def get_voltage(rp, freq=1000):
+    """Acquire IN2 and return its mean voltage in volts."""
+    t, voltage = acquire(rp, freq)
+    return np.mean(voltage)
+
 def acquire(rp, freq):
     """Configure acquisition and return the time [s] and IN2 voltage [V]."""
     dec = choose_decimation(freq)
